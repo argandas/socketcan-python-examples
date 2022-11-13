@@ -70,7 +70,6 @@ def is_veh_speed_rsp(can_msg: can.Message) -> bool:
             dlc = can_msg.data[0]
             mod = can_msg.data[1]
             pid = can_msg.data[2]
-            ret = False
             if dlc == 0x03:
                 if mod == 0x41:
                     if pid == VEH_SPD_PID:
