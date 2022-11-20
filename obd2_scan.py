@@ -92,12 +92,13 @@ def main():
                 handle_rsp_timeout()
             else:
                 if is_veh_speed_rsp(can_rsp):
-                    veh_spd = can_rsp.data[3] # Vehicle Speed (0-255 kph)
+                    veh_spd = can_rsp.data[3]  # Vehicle Speed (0-255 kph)
                     handle_veh_spd(veh_spd)
             time.sleep(1)
 
         except can.CanError as e:
             print(e)
+
 
 if __name__ == "__main__":
     main()

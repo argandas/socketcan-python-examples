@@ -9,6 +9,7 @@ RSP_ID = 0x7E8
 
 VEH_SPD_INC = 10
 
+
 def req_vehicle_speed() -> can.Message:
     req_data = REQ_PAD
     req_data[0] = 0x02  # DLC = 2
@@ -67,7 +68,7 @@ def is_veh_speed_rsp(can_msg: can.Message) -> bool:
 
 
 def main():
-    
+
     veh_spd = 0
     veh_spd_inc = True
     bus = can.interface.Bus(bustype="socketcan", channel="vcan0", bitrate=250000)
@@ -94,6 +95,7 @@ def main():
 
         except can.CanError as e:
             print(e)
+
 
 if __name__ == "__main__":
     main()
